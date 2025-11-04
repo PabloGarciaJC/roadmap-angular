@@ -1,0 +1,22 @@
+services:
+  server_core:
+    build:
+      context: .
+      dockerfile: ./server_core/Dockerfile
+    image: roadmap_vite_angular_image
+    pull_policy: never 
+    container_name: roadmap_vite_angular_server
+    user: "1000:1000"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../.:/var/www/html
+    working_dir: /var/www/html
+    tty: true
+    stdin_open: true
+    networks:
+      - roadmap_vite_angular_network
+
+networks:
+  roadmap_vite_angular_network:
+    name: roadmap_vite_angular_network
