@@ -4,7 +4,7 @@ Este proyecto se utiliza como base de estudio y experimentación con **Angular**
 
 ## Demo del Proyecto
 
-[https://roadmap-angular.com/](https://roadmap-vite-react.pablogarciajc.com/)
+[https://roadmap-angular.com/](https://roadmap-angular.pablogarciajc.com/)
 
 | ![Imagen 1](https://pablogarciajc.com/wp-content/uploads/2025/11/roadmap-angular-1.webp) | ![Imagen 2](https://pablogarciajc.com/wp-content/uploads/2025/11/roadmap-angular-6.webp) |
 |-----------|-----------|
