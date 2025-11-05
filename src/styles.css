@@ -11,8 +11,7 @@ html {
 
 body {
   font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-  background: #f4f5f7;
-  /* fondo suave gris claro */
+  background: #f8f9fa; /* gris muy suave */
   color: #333;
   line-height: 1.6;
   padding-bottom: 3rem;
@@ -40,9 +39,8 @@ body {
   width: 320px;
   padding: 1.5rem;
   background-color: #ffffff;
-  /* blanco suave */
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -63,26 +61,25 @@ body {
 
 .close-btn {
   display: none;
-  background: #f3f3f3;
+  background: #ffe5e9; /* rojo suave */
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: #ff4d4d;
-  /* rojo suave para la X */
-  padding: 0.2rem 0.5rem;
+  color: #dd0031; /* rojo Angular */
+  padding: 0.3rem 0.6rem;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background: #ffebeb;
+  background: #ffccd8;
 }
 
 /* Sidebar título */
 .sidebar-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b;
+  color: #dd0031;
 }
 
 /* Links de la sidebar */
@@ -99,27 +96,24 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  color: #1e293b;
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  color: #333;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .sidebar-link:hover {
-  background: #fce8e6;
-  /* rojo muy suave */
-  color: #d32f2f;
-  /* rojo medio para hover */
-  transform: translateX(4px);
+  background: #ffe5e9; /* rojo suave */
+  color: #dd0031;
+  transform: translateX(3px);
 }
 
 .sidebar-link .icon {
   font-size: 1.2rem;
-  color: #d32f2f;
-  /* rojo medio para iconos */
+  color: #dd0031;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -131,7 +125,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0,0,0,0.15);
   z-index: 999;
   display: none;
 }
@@ -152,41 +146,58 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #d32f2f;
-  /* rojo suave Angular */
+  color: #dd0031; /* rojo Angular */
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #444;
 }
 
 /* ===== TARJETAS ===== */
+
 .card {
   border-radius: 16px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #ffffff; /* fondo blanco neutro */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Variantes de tarjetas */
+/* Card informativa */
 .card-info {
-  border-left: 6px solid #d32f2f;
-  background: #fff5f5;
+  border-left: 6px solid #dd0031;
+  background: #fff0f2;
+  color: #333;
 }
 
+/* Card neutral / secundaria */
 .card-neutral {
-  border-left: 6px solid #888;
-  background: #f8f8f8;
+  border-left: 6px solid #888888;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Bloques de código dentro de tarjetas */
+.code-block {
+  padding: 12px;
+  border-radius: 10px;
+  font-family: "Fira Code", monospace;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  border: 1px solid #e0e0e0;
+  background: #fdfdfd;
+  color: #b71c1c;
 }
 
 /* ===== BLOQUES DE CÓDIGO ===== */
@@ -199,9 +210,8 @@ body {
   font-size: 0.95rem;
   overflow-x: auto;
   border: 1px solid #e0e0e0;
-  background: #fdf5f5;
-  color: #b71c1c;
-  /* rojo oscuro para código */
+  background: #fff0f2;
+  color: #b71c1c; /* rojo oscuro para código */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -239,13 +249,14 @@ body {
   top: 1rem;
   left: 1rem;
   z-index: 1000;
-  background: #d32f2f;
+  background: #dd0031;
   border: none;
   padding: 0.6rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   cursor: pointer;
   color: #fff;
+  transition: background 0.3s ease;
 }
 
 .hamburger-btn:hover {
@@ -253,11 +264,8 @@ body {
 }
 
 /* Sidebar responsive para móviles */
-@media only screen and (min-width: 768px) and (max-width: 991px),
-screen and (max-width: 767px) {
-  .hamburger-btn {
-    display: block;
-  }
+@media only screen and (max-width: 991px) {
+  .hamburger-btn { display: block; }
 
   .sidebar-header .close-btn {
     display: inline-block;
@@ -272,19 +280,16 @@ screen and (max-width: 767px) {
     z-index: 1000;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
-  }
+  .sidebar.open { transform: translateX(0); }
 }
 
-
+/* Sidebar iconos */
 .sidebar-link .material-icons {
   margin-right: 0.5rem;
-  color: #d32f2f;
-  /* rojo Angular */
+  color: #dd0031;
 }
 
-
+/* ===== LOGO INTRO ===== */
 .intro-container {
   display: flex;
   flex-direction: column;
@@ -299,7 +304,7 @@ screen and (max-width: 767px) {
 }
 
 .logo-header h1 {
-  margin: 0px;
+  margin: 0;
 }
 
 .angular-logo {
@@ -313,19 +318,5 @@ screen and (max-width: 767px) {
 
 .intro-container .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Ajuste de títulos con colores Angular */
-.card-info {
-  border-left: 6px solid #dd0031;
-  /* rojo Angular */
-  background: #ffe5e9;
-  /* tono suave para contraste */
-}
-
-.card-neutral {
-  border-left: 6px solid #c2185b;
-  /* rojo secundario */
-  background: #fff0f3;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
