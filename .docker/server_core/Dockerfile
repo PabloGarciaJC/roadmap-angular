@@ -40,10 +40,15 @@ RUN echo ". /etc/terminal" | tee -a /home/${USERNAME}/.bashrc /root/.bashrc \
     && chown ${USERNAME}:${USERNAME} /home/${USERNAME}/.bashrc
 
 ## ---------------------------------------------------------
+## Instalar Angular CLI globalmente
+## ---------------------------------------------------------
+RUN npm install -g @angular/cli
+
+## ---------------------------------------------------------
 ## Directorio de trabajo y puerto expuesto
 ## ---------------------------------------------------------
 WORKDIR /var/www/html
-EXPOSE 5173
+EXPOSE 4200
 
 ## ---------------------------------------------------------
 ## Usar el usuario renombrado

@@ -1,75 +1,59 @@
-# Roadmap: React + Vite
+# App
 
-Este proyecto es tu primer acercamiento práctico a **React** usando **Vite**. Está pensado como una guía educativa y de práctica para aprender conceptos esenciales de React mientras construyes un proyecto funcional.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
 
----
+## Development server
 
-## Demo del Proyecto
+To start a local development server, run:
 
-[https://roadmap-vite-react.com/](https://roadmap-vite-react.pablogarciajc.com/)
+```bash
+ng serve
+```
 
-| ![Imagen 1](https://pablogarciajc.com/wp-content/uploads/2025/10/roadmap-vite-react-1.webp) | ![Imagen 2](https://pablogarciajc.com/wp-content/uploads/2025/10/roadmap-vite-react-2.webp) |
-|-----------|-----------|
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Áreas de Estudio
+## Code scaffolding
 
-Este proyecto es tu primer acercamiento práctico a **React** usando **Vite**, diseñado para aprender conceptos esenciales mientras construyes un proyecto funcional:
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-- **Introducción a Vite con React**: Instalación y configuración de Vite, diferencias con Create React App, estructura del proyecto y desarrollo rápido.
-- **Componentes**: Base de React; componentes funcionales, composición, importación y exportación.
-- **JSX**: Sintaxis similar a HTML, expresiones, condicionales, loops y buenas prácticas de legibilidad.
-- **Props**: Pasar información a componentes, props por defecto, validación y comunicación entre componentes padre e hijo.
-- **useState**: Manejo del estado local, actualización de estado, objetos y arrays, y patrones para múltiples estados.
-- **useEffect**: Efectos secundarios, fetch de datos, timers, dependencias y limpieza de efectos.
-- **useContext**: Manejo de estado global, creación y consumo de contextos, y evitar prop drilling.
-- **useCallback**: Optimización de funciones pasadas como props y evitar recreación innecesaria de funciones.
-- **useMemo**: Memorizar cálculos costosos y evitar renders innecesarios de componentes.
-- **Manejo de eventos**: Eventos en JSX, objeto event, prevención de comportamiento por defecto y buenas prácticas.
-- **Renderizado de listas**: Map, claves (`key`), listas anidadas, componentes reutilizables, filtrado y ordenamiento.
-- **React Router**: Configuración de rutas, rutas dinámicas, navegación programática y rutas anidadas.
-- **Formularios**: Inputs controlados y no controlados, validación de datos, manejo de errores y librerías externas opcionales.
-- **Optimización avanzada**: Memoización de componentes, lazy loading, división de código y análisis de performance.
+```bash
+ng generate component component-name
+```
 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## Instalación
+```bash
+ng generate --help
+```
 
-### Requisitos Previos
+## Building
 
-- Tener **Docker** y **Docker Compose** instalados.
-- **Make**: Utilizado para automatizar procesos y gestionar contenedores de manera más eficiente.
+To build the project run:
 
-### Pasos de Instalación
+```bash
+ng build
+```
 
-1. Clona el repositorio desde GitHub.
-2. Dentro del repositorio, encontrarás un archivo **Makefile** que contiene los comandos necesarios para iniciar y gestionar tu aplicación.
-3. Usa los siguientes comandos de **Make** para interactuar con la aplicación:
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-    - **`make init-app`**: Inicializa la aplicación, copiando `.env`, creando symlinks, levantando contenedores, instalando dependencias y levantando el servidor de desarrollo.  
-    - **`make up`**: Levanta los contenedores asociados a la aplicación en segundo plano.  
-    - **`make down`**: Detiene los contenedores y apaga la aplicación.  
-    - **`make shell`**: Ingresa al contenedor para interactuar directamente con el sistema.  
-    - **`make npm-install`**: Instala todas las dependencias definidas en `package.json`.  
-    - **`make npm-host`**: Levanta el servidor de desarrollo (`npm run dev`) accesible desde tu máquina local.  
-    - **`make npm-build`**: Genera la versión de producción de la aplicación (`npm run build`) y mueve los archivos compilados a la raíz del proyecto.  
+## Running unit tests
 
-4. Además de estos comandos, dentro del archivo **Makefile** puedes encontrar otros comandos que te permitirán interactuar de manera más específica con los contenedores y los diferentes servicios que conforman la aplicación.
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-5. Accede a los siguientes URL:
-   - **Aplicación Web**: [http://localhost:5173](http://localhost:5173)
-   - **PhpMyAdmin**: [http://localhost:8082/](http://localhost:8082/)
+```bash
+ng test
+```
 
----
+## Running end-to-end tests
 
-## Contáctame / Sígueme en mis redes sociales
+For end-to-end (e2e) testing, run:
 
-| Red Social   | Descripción                                              | Enlace                   |
-|--------------|----------------------------------------------------------|--------------------------|
-| **Facebook** | Conéctate y mantente al tanto de mis actualizaciones.    | [Presiona aquí](https://www.facebook.com/PabloGarciaJC) |
-| **YouTube**  | Fundamentos de la programación, tutoriales y noticias.   | [Presiona aquí](https://www.youtube.com/@pablogarciajc)     |
-| **Página Web** | Más información sobre mis proyectos y servicios.        | [Presiona aquí](https://pablogarciajc.com/)              |
-| **LinkedIn** | Sigue mi carrera profesional y establece conexiones.     | [Presiona aquí](https://www.linkedin.com/in/pablogarciajc) |
-| **Instagram**| Fotos, proyectos y contenido relacionado.                 | [Presiona aquí](https://www.instagram.com/pablogarciajc) |
-| **Twitter**  | Proyectos, pensamientos y actualizaciones.                | [Presiona aquí](https://x.com/PabloGarciaJC?t=lct1gxvE8DkqAr8dgxrHIw&s=09)   |
+```bash
+ng e2e
+```
 
----
-> _"El buen manejo de tus finanzas hoy construye la seguridad del mañana."_
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
