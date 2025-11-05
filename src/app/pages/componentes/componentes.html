@@ -1,1 +1,162 @@
-<p>componentes works!</p>
+<div class="container">
+    <h1 class="title">Componentes en Angular</h1>
+
+    <div class="card card-info">
+        <h2 class="subtitle">¿Qué es un Componente?</h2>
+        <p>
+            Un componente es la unidad principal de Angular. Define la vista (HTML), la lógica (TS) y los estilos
+            (CSS/SCSS)
+            de una parte de la aplicación.
+        </p>
+        <p>
+            Cada componente se organiza en archivos separados:
+        </p>
+        <ul>
+            <li><code>nombre-componente.component.ts</code>: Lógica del componente.</li>
+            <li><code>nombre-componente.component.html</code>: Plantilla HTML.</li>
+            <li><code>nombre-componente.component.css</code> o <code>.scss</code>: Estilos del componente.</li>
+            <li><code>nombre-componente.component.spec.ts</code>: Pruebas unitarias.</li>
+        </ul>
+    </div>
+
+    <div class="card card-neutral">
+        <h2 class="subtitle">Crear un componente</h2>
+        <p>Usa Angular CLI para generar un componente automáticamente:</p>
+        <div class="code-block">
+            <code>
+                ng generate component nombre-componente <br>
+                ng g c nombre-componente
+            </code>
+        </div>
+        <p>Esto creará la carpeta con los archivos mencionados y actualizará <code>app.module.ts</code> automáticamente
+            agregando el componente en la sección <code>declarations</code>.</p>
+    </div>
+
+    <div class="card card-info">
+        <h2 class="subtitle">Importar y usar un componente</h2>
+        <p>
+            Para usar un componente en otro módulo, primero debes importarlo en el módulo correspondiente:
+        </p>
+        <div class="code-block">
+        <pre>
+import &#123; NombreComponenteComponent &#125; from './ruta/nombre-componente.component';
+@NgModule(&#123;
+declarations: [NombreComponenteComponent],
+imports: [...],
+&#125;)
+export class AppModule &#123;&#125;
+        </pre>
+        </div>
+        <p>
+            Una vez declarado en un módulo, puedes usarlo en cualquier plantilla del mismo módulo mediante su
+            <code>selector</code>:
+        </p>
+        <div class="code-block">
+            <code>
+                &lt;app-nombre-componente&gt;&lt;/app-nombre-componente&gt;
+            </code>
+        </div>
+    </div>
+
+    <div class="card card-info">
+        <h2 class="subtitle">Ciclo de vida de un componente</h2>
+        <ul>
+            <li>
+                <code>ngOnChanges()</code>: Se ejecuta cuando cambian los <code>@Input()</code>.
+                <div class="code-block">
+                    <code>
+                        ngOnChanges(changes: SimpleChanges) &#123;<br>
+                        &nbsp;&nbsp;console.log('Cambio en input:', changes);<br>
+                        &#125;
+                    </code>
+                </div>
+            </li>
+            <li>
+                <code>ngOnInit()</code>: Se ejecuta al inicializar el componente.
+                <div class="code-block">
+                    <code>
+                        ngOnInit() &#123;<br>
+                        &nbsp;&nbsp;console.log('Componente inicializado');<br>
+                        &#125;
+                    </code>
+                </div>
+            </li>
+            <li>
+                <code>ngDoCheck()</code>: Detecta cambios personalizados.
+                <div class="code-block">
+                    <code>
+                        ngDoCheck() &#123;<br>
+                        &nbsp;&nbsp;console.log('Detectando cambios personalizados');<br>
+                        &#125;
+                    </code>
+                </div>
+            </li>
+            <li>
+                <code>ngAfterViewInit()</code>: Después de renderizar vistas hijas.
+                <div class="code-block">
+                    <code>
+                        ngAfterViewInit() &#123;<br>
+                        &nbsp;&nbsp;console.log('Vistas hijas renderizadas');<br>
+                        &#125;
+                    </code>
+                </div>
+            </li>
+            <li>
+                <code>ngOnDestroy()</code>: Antes de destruir el componente.
+                <div class="code-block">
+                    <code>
+                        ngOnDestroy() &#123;<br>
+                        &nbsp;&nbsp;console.log('Componente destruido');<br>
+                        &#125;
+                    </code>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card card-info">
+        <h2 class="subtitle">Ejemplo completo con Input y Output</h2>
+        <p>Supongamos un componente hijo que recibe un mensaje y emite un evento:</p>
+
+        <div class="code-block">
+            <pre>
+// hijo.component.ts
+import &#123; Component, Input, Output, EventEmitter &#125; from '@angular/core';
+@Component(&#123;
+selector: 'app-hijo',
+template: '&lt;button (click)=&quot;notify()&quot;&gt;Enviar Evento&lt;/button&gt;'
+&#125;)
+export class HijoComponent &#123;
+@Input() mensaje: string = ''; 
+@Output() evento = new EventEmitter&lt;string&gt;();
+notify() &#123;
+this.evento.emit(this.mensaje);
+&#125;
+&#125;
+            </pre>
+        </div>
+
+        <p>Y en el componente padre:</p>
+        <div class="code-block">
+            <code>
+                // padre.component.html <br>
+                &lt;app-hijo [mensaje]="'Hola desde el padre'" (evento)="recibirEvento($event)"&gt;&lt;/app-hijo&gt;
+            </code>
+        </div>
+
+        <div class="code-block">
+            <code>
+                // padre.component.ts <br>
+                export class PadreComponent &#123;<br>
+                &nbsp;&nbsp;recibirEvento(valor: string) &#123;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log('Evento recibido:', valor);<br>
+                &nbsp;&nbsp;&#125;<br>
+                &#125;
+            </code>
+        </div>
+        <p>
+            <strong>Nota:</strong> Para que el componente hijo funcione, debe estar declarado en el mismo módulo que el
+            padre o en un módulo compartido importado.
+        </p>
+    </div>
+</div>

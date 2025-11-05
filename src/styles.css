@@ -150,7 +150,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -162,7 +162,7 @@ body {
 
 .card-neutral {
   border-left: 6px solid #64748b;
-  background: #f8fafc;
+  background: #e9f4ff;
 }
 
 /* ===== LISTAS ===== */
@@ -257,8 +257,7 @@ li::marker {
 
 /* ===== BLOQUES DE CÓDIGO ===== */
 .code-block {
-  color: #e2e8f0;
-  padding: 1rem 1.2rem;
+  padding: 10px;
   border-radius: 10px;
   font-family: "Fira Code", monospace;
   white-space: pre-wrap;
