@@ -1,12 +1,13 @@
-<div class="card card-info">
-    <h2 class="subtitle">Ejemplo de Formularios en Angular</h2>
-    <p>
-        Angular permite crear formularios de manera <strong>reactiva</strong> o <strong>template-driven</strong>.  
-        Aquí mostramos un ejemplo simple de formulario usando <strong>template-driven</strong>.
-    </p>
+<div class="container">
+    <h1 class="title">Formularios</h1>
+    <div class="card card-info">
+        <p>
+            Angular permite crear formularios de manera <strong>reactiva</strong> o <strong>template-driven</strong>.
+            Aquí mostramos un ejemplo simple de formulario usando <strong>template-driven</strong>.
+        </p>
 
-    <div class="code-block">
-        <pre>
+        <div class="code-block">
+            <pre>
 <!-- app.module.ts -->
 import &#123; NgModule &#125; from '@angular/core';
 import &#123; BrowserModule &#125; from '@angular/platform-browser';
@@ -20,14 +21,14 @@ import &#123; AppComponent &#125; from './app.component';
 &#125;)
 export class AppModule &#123;&#125;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        Ahora en el componente HTML usamos <strong>ngModel</strong> para enlazar el valor del formulario:
-    </p>
+        <p>
+            Ahora en el componente HTML usamos <strong>ngModel</strong> para enlazar el valor del formulario:
+        </p>
 
-    <div class="code-block">
-        <pre>
+        <div class="code-block">
+            <pre>
 <!-- app.component.html -->
 &lt;form&gt;
   &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
@@ -38,14 +39,14 @@ export class AppModule &#123;&#125;
 
 &lt;p&gt;Formulario: nombre&lt;/p&gt;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        Y en el componente TypeScript:
-    </p>
+        <p>
+            Y en el componente TypeScript:
+        </p>
 
-    <div class="code-block">
-        <pre>
+        <div class="code-block">
+            <pre>
 <!-- app.component.ts -->
 import &#123; Component &#125; from '@angular/core';
 
@@ -57,11 +58,13 @@ export class AppComponent &#123;
   nombre: string = 'formularios works!';
 &#125;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        - `FormsModule` debe importarse en el módulo para usar `ngModel`.  
-        - `[(ngModel)]` permite <strong>enlace bidireccional</strong> entre el input y la propiedad del componente.  
-        - Al escribir en el input, el `<p>` se actualizará automáticamente mostrando el valor actual.
-    </p>
+        <p>
+            - `FormsModule` debe importarse en el módulo para usar `ngModel`.
+            - `[(ngModel)]` permite <strong>enlace bidireccional</strong> entre el input y la propiedad del componente.
+            - Al escribir en el input, el `
+        <p>` se actualizará automáticamente mostrando el valor actual.
+        </p>
+    </div>
 </div>

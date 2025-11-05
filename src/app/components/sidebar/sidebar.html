@@ -1,5 +1,9 @@
 <div class="sidebar" [class.open]="isOpen">
-  <h2 class="sidebar-title">Roadmap Angular</h2>
+  <div class="sidebar-header">
+    <h2 class="sidebar-title">Roadmap Angular</h2>
+    <!-- Botón X para cerrar -->
+    <button class="close-btn" (click)="close()">&#10005;</button>
+  </div>
 
   <ul class="sidebar-links">
     <li><a routerLink="/" class="sidebar-link" (click)="close()">Introducción</a></li>

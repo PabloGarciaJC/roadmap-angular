@@ -1,12 +1,15 @@
-<div class="card card-info">
-    <h2 class="subtitle">Ejemplo de Directiva</h2>
-    <p>
-        Una directiva en Angular permite <strong>modificar el comportamiento de elementos HTML</strong> o crear comportamientos reutilizables.
-        Por ejemplo, podemos crear una directiva que cambia el color de fondo de un elemento al pasar el ratón.
-    </p>
+<div class="container">
+    <h1 class="title">Directivas</h1>
 
-    <div class="code-block">
-        <pre>
+    <div class="card card-info">
+        <p>
+            Una directiva en Angular permite <strong>modificar el comportamiento de elementos HTML</strong> o crear
+            comportamientos reutilizables.
+            Por ejemplo, podemos crear una directiva que cambia el color de fondo de un elemento al pasar el ratón.
+        </p>
+
+        <div class="code-block">
+            <pre>
 import &#123; Directive, ElementRef, HostListener &#125; from '@angular/core';
 
 @Directive(&#123;
@@ -24,20 +27,22 @@ export class ResaltarDirective &#123;
   &#125;
 &#125;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        Y para usarla en un componente:
-    </p>
+        <p>
+            Y para usarla en un componente:
+        </p>
 
-<div class="code-block">
-    <pre>
+        <div class="code-block">
+            <pre>
 &lt;<span class="html-tag">p</span> appResaltar&gt;<span class="html-text">directivas works!</span>&lt;/<span class="html-tag">p</span>&gt;
     </pre>
-</div>
+        </div>
 
-    <p>
-        - La directiva se declara en un módulo dentro de <code>declarations</code>.<br>
-        - <code>@HostListener</code> permite reaccionar a eventos del DOM como <code>mouseenter</code> y <code>mouseleave</code>.
-    </p>
+        <p>
+            - La directiva se declara en un módulo dentro de <code>declarations</code>.<br>
+            - <code>@HostListener</code> permite reaccionar a eventos del DOM como <code>mouseenter</code> y
+            <code>mouseleave</code>.
+        </p>
+    </div>
 </div>

@@ -1,12 +1,15 @@
-<div class="card card-info">
-    <h2 class="subtitle">Ejemplo de Rutas en Angular</h2>
-    <p>
-        En Angular, las rutas permiten navegar entre diferentes componentes sin recargar la página.
-        Vamos a crear un ejemplo simple donde mostramos un mensaje en un componente al navegar.
-    </p>
+<div class="container">
+    <h1 class="title">Rutas</h1>
 
-    <div class="code-block">
-        <pre>
+    <div class="card card-info">
+
+        <p>
+            En Angular, las rutas permiten navegar entre diferentes componentes sin recargar la página.
+            Vamos a crear un ejemplo simple donde mostramos un mensaje en un componente al navegar.
+        </p>
+
+        <div class="code-block">
+            <pre>
 import &#123; NgModule &#125; from '@angular/core';
 import &#123; RouterModule, Routes &#125; from '@angular/router';
 import &#123; HomeComponent &#125; from './home/home.component';
@@ -23,14 +26,15 @@ const routes: Routes = [
 &#125;)
 export class AppRoutingModule &#123;&#125;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        Ahora en el HTML principal usamos el <code>router-outlet</code> para renderizar los componentes según la ruta:
-    </p>
+        <p>
+            Ahora en el HTML principal usamos el <code>router-outlet</code> para renderizar los componentes según la
+            ruta:
+        </p>
 
-    <div class="code-block">
-        <pre>
+        <div class="code-block">
+            <pre>
 <!-- app.component.html -->
 &lt;nav&gt;
   &lt;a routerLink=''&gt;Home&lt;/a&gt;
@@ -39,25 +43,27 @@ export class AppRoutingModule &#123;&#125;
 
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        Y los componentes son simples, por ejemplo:
-    </p>
+        <p>
+            Y los componentes son simples, por ejemplo:
+        </p>
 
-    <div class="code-block">
-        <pre>
+        <div class="code-block">
+            <pre>
 <!-- home.component.html -->
 &lt;p&gt;rutas works!&lt;/p&gt;
 
 <!-- about.component.html -->
 &lt;p&gt;Acerca de esta app&lt;/p&gt;
         </pre>
-    </div>
+        </div>
 
-    <p>
-        - `RouterModule.forRoot(routes)` configura las rutas principales de la aplicación.<br>
-         - <code>&lt;router-outlet&gt;</code> es el lugar donde Angular renderiza el componente activo según la ruta.<br>
-        - `routerLink` permite navegar entre rutas sin recargar la página.
-    </p>
+        <p>
+            - `RouterModule.forRoot(routes)` configura las rutas principales de la aplicación.<br>
+            - <code>&lt;router-outlet&gt;</code> es el lugar donde Angular renderiza el componente activo según la
+            ruta.<br>
+            - `routerLink` permite navegar entre rutas sin recargar la página.
+        </p>
+    </div>
 </div>
