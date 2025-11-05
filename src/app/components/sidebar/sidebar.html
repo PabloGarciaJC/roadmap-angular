@@ -1,17 +1,55 @@
 <div class="sidebar" [class.open]="isOpen">
   <div class="sidebar-header">
-    <h2 class="sidebar-title">Roadmap Angular</h2>
+    <h2 class="sidebar-title">
+      <span class="material-icons">school</span>
+      Roadmap Angular
+    </h2>
     <!-- Botón X para cerrar -->
     <button class="close-btn" (click)="close()">&#10005;</button>
   </div>
 
   <ul class="sidebar-links">
-    <li><a routerLink="/" class="sidebar-link" (click)="close()">Introducción</a></li>
-    <li><a routerLink="/componentes" class="sidebar-link" (click)="close()">Componentes</a></li>
-    <li><a routerLink="/modulos" class="sidebar-link" (click)="close()">Módulos</a></li>
-    <li><a routerLink="/services" class="sidebar-link" (click)="close()">Services</a></li>
-    <li><a routerLink="/directivas" class="sidebar-link" (click)="close()">Directivas</a></li>
-    <li><a routerLink="/rutas" class="sidebar-link" (click)="close()">Rutas</a></li>
-    <li><a routerLink="/formularios" class="sidebar-link" (click)="close()">Formularios</a></li>
+    <li>
+      <a routerLink="/" class="sidebar-link" (click)="close()">
+        <span class="material-icons">home</span>
+        Introducción
+      </a>
+    </li>
+    <li>
+      <a routerLink="/componentes" class="sidebar-link" (click)="close()">
+        <span class="material-icons">widgets</span>
+        Componentes
+      </a>
+    </li>
+    <li>
+      <a routerLink="/modulos" class="sidebar-link" (click)="close()">
+        <span class="material-icons">view_module</span>
+        Módulos
+      </a>
+    </li>
+    <li>
+      <a routerLink="/services" class="sidebar-link" (click)="close()">
+        <span class="material-icons">build_circle</span>
+        Services
+      </a>
+    </li>
+    <li>
+      <a routerLink="/directivas" class="sidebar-link" (click)="close()">
+        <span class="material-icons">tune</span>
+        Directivas
+      </a>
+    </li>
+    <li>
+      <a routerLink="/rutas" class="sidebar-link" (click)="close()">
+        <span class="material-icons">explore</span>
+        Rutas
+      </a>
+    </li>
+    <li>
+      <a routerLink="/formularios" class="sidebar-link" (click)="close()">
+        <span class="material-icons">description</span>
+        Formularios
+      </a>
+    </li>
   </ul>
 </div>
