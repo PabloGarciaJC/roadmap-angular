@@ -1,1 +1,67 @@
-<p>formularios works!</p>
+<div class="card card-info">
+    <h2 class="subtitle">Ejemplo de Formularios en Angular</h2>
+    <p>
+        Angular permite crear formularios de manera <strong>reactiva</strong> o <strong>template-driven</strong>.  
+        Aquí mostramos un ejemplo simple de formulario usando <strong>template-driven</strong>.
+    </p>
+
+    <div class="code-block">
+        <pre>
+<!-- app.module.ts -->
+import &#123; NgModule &#125; from '@angular/core';
+import &#123; BrowserModule &#125; from '@angular/platform-browser';
+import &#123; FormsModule &#125; from '@angular/forms';
+import &#123; AppComponent &#125; from './app.component';
+
+@NgModule(&#123;
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123;&#125;
+        </pre>
+    </div>
+
+    <p>
+        Ahora en el componente HTML usamos <strong>ngModel</strong> para enlazar el valor del formulario:
+    </p>
+
+    <div class="code-block">
+        <pre>
+<!-- app.component.html -->
+&lt;form&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre" [(ngModel)]="nombre"&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Formulario: nombre&lt;/p&gt;
+        </pre>
+    </div>
+
+    <p>
+        Y en el componente TypeScript:
+    </p>
+
+    <div class="code-block">
+        <pre>
+<!-- app.component.ts -->
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+&#125;)
+export class AppComponent &#123;
+  nombre: string = 'formularios works!';
+&#125;
+        </pre>
+    </div>
+
+    <p>
+        - `FormsModule` debe importarse en el módulo para usar `ngModel`.  
+        - `[(ngModel)]` permite <strong>enlace bidireccional</strong> entre el input y la propiedad del componente.  
+        - Al escribir en el input, el `<p>` se actualizará automáticamente mostrando el valor actual.
+    </p>
+</div>
