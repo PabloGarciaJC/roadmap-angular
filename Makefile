@@ -48,9 +48,9 @@ shell:
 
 .PHONY: clean-project
 clean-project:
-	sudo docker rm -f roadmap_vite_angular_server || true
-	sudo docker rmi -f roadmap_vite_angular_image || true
-	sudo docker network rm roadmap_vite_angular_network || true
+	sudo docker rm -f roadmap_angular_server || true
+	sudo docker rmi -f roadmap_angular_image || true
+	sudo docker network rm roadmap_angular_network || true
 
 ## ---------------------------------------------------------
 ## Instalación y configuración del proyecto (Angular + npm)
