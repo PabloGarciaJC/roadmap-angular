@@ -1,1 +1,76 @@
-<p>services works!</p>
+<div class="container">
+    <h1 class="title">Servicios en Angular</h1>
+
+    <div class="card card-info">
+        <h2 class="subtitle">¿Qué es un Servicio?</h2>
+        <p>
+            Un servicio en Angular es una clase que contiene lógica o datos que pueden ser compartidos
+            entre diferentes componentes. Permite centralizar funcionalidades y mantener los componentes limpios.
+        </p>
+        <p>
+            Los servicios se suelen inyectar usando el sistema de <strong>Dependency Injection</strong> de Angular.
+        </p>
+    </div>
+
+    <div class="card card-neutral">
+        <h2 class="subtitle">Crear un servicio</h2>
+        <p>Usando Angular CLI, podemos generar un servicio automáticamente:</p>
+        <div class="code-block">
+            <pre>
+ng generate service nombre-servicio
+ng g s nombre-servicio
+            </pre>
+        </div>
+        <p>Esto creará dos archivos: <code>nombre-servicio.service.ts</code> y <code>nombre-servicio.service.spec.ts</code>.</p>
+    </div>
+
+<div class="card card-info">
+    <h2 class="subtitle">Ejemplo de servicio</h2>
+    <div class="code-block">
+        <pre>
+import &#123; Injectable &#125; from '@angular/core';
+
+@Injectable(&#123;
+  providedIn: 'root'
+&#125;)
+export class MensajeService &#123;
+  obtenerMensaje(): string &#123;
+    return 'services works!';
+  &#125;
+&#125;
+        </pre>
+    </div>
+    <p>
+        - <code>@Injectable</code> permite que Angular inyecte el servicio donde se necesite.
+        <br>
+        - <code>providedIn: 'root'</code> hace que el servicio esté disponible en toda la aplicación.
+    </p>
+</div>
+
+<div class="card card-info">
+    <h2 class="subtitle">Usar el servicio en un componente</h2>
+<div class="code-block">
+  <pre>
+import &#123; Component, OnInit &#125; from '@angular/core';
+import &#123; MensajeService &#125; from './mensaje.service';
+@Component&#40;&#123;
+  selector: 'app-ejemplo',
+  template: 'mensaje'
+&#125;&#41;
+export class EjemploComponent implements OnInit &#123;
+  mensaje: string = '';
+
+  constructor(private mensajeService: MensajeService) &#123;&#125;
+
+  ngOnInit(): void &#123;
+    this.mensaje = this.mensajeService.obtenerMensaje();
+  &#125;
+&#125;
+  </pre>
+</div>
+    <p>
+        Esto mostrará en pantalla: <code>&lt;p&gt;services works!&lt;/p&gt;</code>
+    </p>
+</div>
+
+</div>

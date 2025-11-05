@@ -1,1 +1,78 @@
-<p>modulos works!</p>
+<div class="container">
+    <h1 class="title">Módulos en Angular</h1>
+
+    <div class="card card-info">
+        <h2 class="subtitle">¿Qué es un Módulo?</h2>
+        <p>
+            Un módulo en Angular es un contenedor que agrupa componentes, directivas, pipes y otros módulos.
+            Permite organizar la aplicación en partes reutilizables y gestionar las dependencias.
+        </p>
+        <p>
+            Cada módulo se define en un archivo con extensión <code>.module.ts</code> y normalmente tiene la siguiente estructura:
+        </p>
+        <ul>
+            <li><code>declarations</code>: Lista de componentes, directivas y pipes que pertenecen al módulo.</li>
+            <li><code>imports</code>: Otros módulos que se necesitan para este módulo.</li>
+            <li><code>exports</code>: Componentes, directivas o pipes que estarán disponibles fuera del módulo.</li>
+            <li><code>providers</code>: Servicios que proporciona este módulo.</li>
+            <li><code>bootstrap</code>: Componente raíz (solo en <code>AppModule</code>).</li>
+        </ul>
+    </div>
+
+    <div class="card card-neutral">
+        <h2 class="subtitle">Ejemplo de módulo</h2>
+        <p>Supongamos un módulo llamado <code>AppModule</code>:</p>
+
+        <div class="code-block">
+            <pre>
+import &#123; NgModule &#125; from '@angular/core';
+import &#123; BrowserModule &#125; from '@angular/platform-browser';
+import &#123; AppComponent &#125; from './app.component';
+
+@NgModule(&#123;
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123;&#125;
+            </pre>
+        </div>
+
+        <p>
+            - <code>declarations</code> incluye todos los componentes que pertenecen al módulo.
+            <br>
+            - <code>imports</code> indica otros módulos que necesitamos (como BrowserModule para aplicaciones web).
+            <br>
+            - <code>providers</code> es donde se agregan los servicios que se usarán en el módulo.
+            <br>
+            - <code>bootstrap</code> indica cuál es el componente inicial al arrancar la aplicación.
+        </p>
+    </div>
+
+    <div class="card card-info">
+        <h2 class="subtitle">Usar un módulo</h2>
+        <p>
+            Una vez declarado un módulo, podemos importarlo en otros módulos para reutilizar componentes, directivas o pipes.
+        </p>
+        <div class="code-block">
+            <pre>
+import &#123; NgModule &#125; from '@angular/core';
+import &#123; CommonModule &#125; from '@angular/common';
+import &#123; SharedComponent &#125; from './shared.component';
+
+@NgModule(&#123;
+  declarations: [SharedComponent],
+  imports: [CommonModule],
+  exports: [SharedComponent]
+&#125;)
+export class SharedModule &#123;&#125;
+            </pre>
+        </div>
+
+        <p>
+            En este ejemplo, <code>SharedModule</code> exporta <code>SharedComponent</code>, 
+            de manera que cualquier otro módulo que importe <code>SharedModule</code> pueda usarlo.
+        </p>
+    </div>
+</div>
