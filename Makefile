@@ -73,7 +73,3 @@ npm-host:
 build-prod:
 	$(DOCKER_COMPOSE) exec --user $(USER) server_core bash -c \
 		"cd $(APP_DIR) && ng build --configuration production"
-
-
-
-# npm install @angular/cli --save-dev
