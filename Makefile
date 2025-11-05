@@ -65,6 +65,7 @@ npm-host:
 	$(DOCKER_COMPOSE) exec --user $(USER) server_core bash -c \
 		"cd $(APP_DIR) && ng serve --host 0.0.0.0 --port 4200"
 
+
 ## ---------------------------------------------------------
 ## Compila el proyecto Angular para producción
 ## Genera la carpeta /dist con los archivos optimizados
