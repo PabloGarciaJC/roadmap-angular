@@ -53,7 +53,6 @@ Este proyecto está enfocado en reforzar conocimientos esenciales de **Angular**
 
 5. Accede a los siguientes URL:
    - **Aplicación Web**: [http://localhost:5173](http://localhost:5173)
-   - **PhpMyAdmin**: [http://localhost:8082/](http://localhost:8082/)
 
 ---
 
@@ -69,5 +68,5 @@ Este proyecto está enfocado en reforzar conocimientos esenciales de **Angular**
 | **Twitter**  | Proyectos, pensamientos y actualizaciones.                | [Presiona aquí](https://x.com/PabloGarciaJC?t=lct1gxvE8DkqAr8dgxrHIw&s=09)   |
 
 ---
-> _"El buen manejo de tus finanzas hoy construye la seguridad del mañana."_
 
+> _"El buen manejo de tus finanzas hoy construye la seguridad del mañana."
