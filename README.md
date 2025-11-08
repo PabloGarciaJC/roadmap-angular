@@ -1,4 +1,4 @@
-# Roadmap Angular
+# Roadmap (Angular)
 
 Este proyecto se utiliza como base de estudio y experimentación con **Angular**, con el objetivo de estructurar, optimizar y estandarizar buenas prácticas en aplicaciones frontend.
 
