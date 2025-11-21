@@ -69,4 +69,4 @@ Este proyecto está enfocado en reforzar conocimientos esenciales de **Angular**
 
 ---
 
-> _"El buen manejo de tus finanzas hoy construye la seguridad del mañana."
+> _"La única forma de hacer un gran trabajo es amar lo que haces." - Steve Jobs_
